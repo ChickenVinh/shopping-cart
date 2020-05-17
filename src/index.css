@@ -1,0 +1,47 @@
+html{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body{
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ee6e73;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 16px;
+  text-decoration: none;
+  width: 75px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.title{
+  display: block;
+  color: white;
+  text-align: center;
+  float: left;
+  width: 110px;
+  padding-top: 14px;
+  padding-bottom: 16px;
+}
+
+.navbar{
+  
+}
