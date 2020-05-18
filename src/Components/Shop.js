@@ -2,7 +2,9 @@ import React from 'react'
 
 const Shop = () => {
     return(
-        <h1>Shop</h1>
+        <div className = "container">
+            <h1>Shop</h1>
+        </div>
     )
 }
 

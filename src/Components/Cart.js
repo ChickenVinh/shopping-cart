@@ -6,6 +6,7 @@ const Cart = () => {
             <div className = "cart">
                 <h5>You have ordered:</h5>
                 <div className = "collection">
+                
                     <p>Nothing.</p>
                 </div>
             </div>
