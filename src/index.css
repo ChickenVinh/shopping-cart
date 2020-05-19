@@ -1,5 +1,9 @@
-.card{
+.card {
     width: 300px;
+}
+
+.cart {
+    margin-top: 40px;
 }
 
 .box {
@@ -11,4 +15,9 @@
 .card .card-image .card-title {
     color: black;
     font-weight: 400;
+}
+
+.collection .collection-item img {
+    width: 150px;
+    margin-right: 25px;
 }
