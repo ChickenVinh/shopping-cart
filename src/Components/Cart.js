@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom'
-import {removeFromCart, addQuantity, subtractQuantity} from './Actions'
+import {removeFromCart, addQuantity, subtractQuantity, addShipping, subtractShipping} from './Actions'
 
 const Cart = () => {
     const state = useSelector(state => state)
@@ -31,14 +31,30 @@ const Cart = () => {
     (<p>Nothing.</p>)
 
     return(
-       <div className = 'container'>
-           <div className = 'cart'>
-                <h5>You have ordered:</h5>
-                <ul className = 'collection'>
-                    {addedItems}
-                </ul>
-           </div>
-       </div>
+        <div>
+            <div className = 'container'>
+                <div className = 'cart'>
+                    <h5>You have ordered:</h5>
+                    <ul className = 'collection'>
+                        {addedItems}
+                    </ul>
+                </div>
+            </div>
+            <div className="container">
+                <div className="collection">
+                    <li className="collection-item">
+                            <label>
+                                <input type="checkbox" />
+                                <span>Shipping(+6€)</span>
+                            </label>
+                        </li>
+                        <li className="collection-item"><b>Total: {state.total} $</b></li>
+                    </div>
+                    <div className="checkout">
+                        <button className="waves-effect waves-light btn">Checkout</button>
+                    </div>
+                </div>
+        </div>
     )
 }
 

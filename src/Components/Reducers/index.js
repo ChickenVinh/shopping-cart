@@ -57,7 +57,7 @@ const rootReducer = (state = initialState, action) => {
             total: newTotal
         }
     }
-  //INSIDE CART COMPONENT
+    //INSIDE CART COMPONENT
     if(action.type === 'ADD_QUANTITY'){
         let addedItem = state.items.find(item=> item.id === action.payload)
             addedItem.quantity += 1 
@@ -79,8 +79,7 @@ const rootReducer = (state = initialState, action) => {
                 addedItems: new_items,
                 total: newTotal
             }
-        }
-        else {
+        }else {
             addedItem.quantity -= 1
             let newTotal = state.total - addedItem.price
             return{
@@ -88,8 +87,22 @@ const rootReducer = (state = initialState, action) => {
                 total: newTotal
             }
         }
-        
-    }else{
+    }
+    
+    if(action.type === 'ADD_SHIPPING'){
+        return{
+            ...state,
+            total: state.total + 6
+        }
+    }
+
+    if(action.type === 'SUBTRACT_SHIPPING'){
+        return{
+            ...state,
+            total: state.total - 6
+        }
+    }
+    else{
         return state
     }
 }

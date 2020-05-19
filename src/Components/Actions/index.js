@@ -25,3 +25,15 @@ export const removeFromCart = (id) => {
         payload: id
     }
 }
+
+export const addShipping = () => {
+    return{
+        type: 'ADD_SHIPPING'
+    }
+}
+
+export const subtractShipping = () => {
+    return{
+        type: 'SUBTRACT_SHIPPING'
+    }
+}
