@@ -1,10 +1,13 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom'
+import {removeFromCart, addQuantity, subtractQuantity} from './Actions'
 
 const Cart = () => {
     const state = useSelector(state => state)
-    const addedItems =state.addedItems.length ?
+    const dispatch = useDispatch()
+
+    const addedItems = state.addedItems.length ?
         (state.addedItems.map(item =>{
         return(
             <li className = 'collection-item avatar' key = {item.id}>
@@ -17,10 +20,10 @@ const Cart = () => {
                     <p><b>Price: {item.price}€</b></p>
                     <p><b>Quantity: {item.quantity}</b></p>
                     <div className = 'add-remove'>
-                        <Link to='/cart'><i className='material-icons'>arrow_drop_up</i></Link>
-                        <Link to='/cart'><i className='material-icons'>arrow_drop_down</i></Link>
+                        <Link to='/cart'><i className='material-icons' onClick = {() => {dispatch(addQuantity(item.id))}}>arrow_drop_up</i></Link>
+                        <Link to='/cart'><i className='material-icons' onClick = {() => {dispatch(subtractQuantity(item.id))}}>arrow_drop_down</i></Link>
                     </div>
-                    <button className = 'waves-effect waves-light btn pink remove'>Remove</button>
+                    <button className = 'waves-effect waves-light btn pink remove' onClick = {() => {dispatch(removeFromCart(item.id))}}>Remove</button>
                 </div>
             </li>
         )

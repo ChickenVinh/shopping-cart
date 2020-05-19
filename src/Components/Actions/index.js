@@ -4,3 +4,24 @@ export const addToCart = (id) => {
         payload: id
     }
 }
+
+export const addQuantity = (id) => {
+    return{
+        type: 'ADD_QUANTITY',
+        payload: id
+    }
+}
+
+export const subtractQuantity = (id) => {
+    return{
+        type: 'SUBTRACT_QUANTITY',
+        payload: id
+    }
+}
+
+export const removeFromCart = (id) => {
+    return{
+        type: 'REMOVE_ITEM',
+        payload: id
+    }
+}
