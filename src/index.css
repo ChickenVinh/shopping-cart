@@ -1,0 +1,14 @@
+.card{
+    width: 300px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card .card-image .card-title {
+    color: black;
+    font-weight: 400;
+}

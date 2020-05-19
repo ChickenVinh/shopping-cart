@@ -1,6 +1,8 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
+    const state = useSelector(state => state)
     return(
         <div className ="container">
             <div className = "cart">
@@ -19,7 +21,7 @@ const Cart = () => {
                         </label>
                     </li>
                     <li className = "collection-item">
-                        <b>Total: xxx €</b>
+                        <b>Total: {state.total} €</b>
                     </li>
                 </div>
                 <div className = "checkout">
